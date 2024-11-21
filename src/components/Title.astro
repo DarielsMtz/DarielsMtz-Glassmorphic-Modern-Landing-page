@@ -1,0 +1,55 @@
+---
+interface Props {
+  t1: string;
+  t2: string;
+  t3: string;
+}
+
+const { t1, t2, t3 } = Astro.props;
+---
+
+<h1>
+  <p>
+    {t1}
+  </p>
+  <p>
+    {t2}
+  </p>
+  <p>
+    {t3}
+  </p>
+</h1>
+
+<style>
+  h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    letter-spacing: -0.8rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  h1 > p {
+    margin: 0;
+    line-height: 10rem;
+    width: auto;
+  }
+
+  h1 > p:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  h1 > p:nth-child(2) {
+    color: var(--primary);
+    align-self: flex-end;
+  }
+
+  h1 > p:nth-child(3) {
+    align-self: flex-end;
+  }
+</style>

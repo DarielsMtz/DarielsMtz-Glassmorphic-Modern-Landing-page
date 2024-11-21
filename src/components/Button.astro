@@ -1,0 +1,50 @@
+---
+interface Props {
+  text: string;
+  url: string;
+}
+
+const { text, url } = Astro.props;
+---
+
+<a
+  href={url}
+  class="flex flex-col justify-center items-center absolute decoration-none text-inherit cursor-pointer h-[50px] w-40 z-50">
+  <button>{text}</button>
+  <span></span>
+</a>
+
+<style>
+  a button {
+    height: 50px;
+    width: 160px;
+    clip-path: path(
+      "M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25"
+    );
+    border: none;
+    border-radius: 13px;
+    background-color: var(--primaryBg);
+    box-shadow: 0px -3px 15px 0px var(--primaryHi) inset;
+    color: var(--primaryFg);
+    font-family: "Manrope";
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(0px);
+    transition: all 0.2s ease;
+  }
+
+  a span {
+    width: 100px;
+    height: 60px;
+    background-color: var(--primaryHi);
+    border-radius: 100%;
+    filter: blur(20px);
+    position: absolute;
+    bottom: -50%;
+    transition: all 0.2s ease;
+  }
+</style>
